@@ -15,6 +15,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.14.1"
+    "@nuxt/ui": "^2.14.1",
+    "jspdf": "^2.5.1"
   }
 }
