@@ -1,13 +1,27 @@
 <script setup lang="ts">
 import { jsPDF } from "jspdf";
+import { ref } from "vue";
+import FilePreview from "../components/FilePreview.vue";
+
+const preview = ref(null);
 
 function createPdf(event) {
     console.log("Generating pdf...");
     // Default export is a4 paper, portrait, using millimeters for units
     const doc = new jsPDF();
 
-    doc.text("Hello world!", 10, 10);
-    doc.save("sample_a4.pdf");
+    if (preview.value) {
+        doc.html(preview.value.content, {
+            callback: function (doc) {
+                // Save the PDF
+                doc.save('sample-document.pdf');
+            },
+            x: 15,
+            y: 15,
+            width: 170, //target width in the PDF document
+            windowWidth: 650 //window width in CSS pixels
+        });
+    }
 }
 </script>
 
@@ -17,5 +31,7 @@ function createPdf(event) {
         <p>This is a sample</p>
         <UButton @click="createPdf">Generate PDF</UButton>
         <PersonForm />
+
+        <FilePreview ref="preview" />
     </div>
 </template>
