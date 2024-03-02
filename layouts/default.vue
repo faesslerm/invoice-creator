@@ -1,19 +1,10 @@
 <template>
     <div>
-        <div class="header shadow-sm mb-6">
-            <p>Invoice Creator</p>
+        <div class="px-8 py-4 shadow-sm mb-6">
+            <p class="text-2xl font-extrabold">Invoice Creator</p>
         </div>
-        <slot />
+        <div class="px-8">
+            <slot />
+        </div>
     </div>
 </template>
-
-<style scoped>
-.header {
-    padding: 1rem 2rem;
-}
-
-.header p {
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-</style>
