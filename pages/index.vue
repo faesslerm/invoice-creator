@@ -16,10 +16,10 @@ function createPdf(event) {
                 // Save the PDF
                 doc.save('sample-document.pdf');
             },
-            x: 15,
-            y: 15,
+            x: 1,
+            y: 1,
             width: 170, //target width in the PDF document
-            windowWidth: 650 //window width in CSS pixels
+            windowWidth: 650, //window width in CSS pixels
         });
     }
 }
