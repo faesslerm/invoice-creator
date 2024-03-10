@@ -26,12 +26,15 @@ function createPdf(event) {
 </script>
 
 <template>
-    <div>
-        <h1>Home Page</h1>
-        <p>This is a sample</p>
-        <UButton @click="createPdf">Generate PDF</UButton>
-        <PersonForm />
-
-        <FilePreview ref="preview" />
+    <div class="flex">
+        <div class="w-1/2">
+            <h1>Home Page</h1>
+            <p>This is a sample</p>
+            <UButton @click="createPdf">Generate PDF</UButton>
+            <PersonForm />
+        </div>
+        <div class="w-1/2 overflow-auto">
+            <FilePreview ref="preview" />
+        </div>
     </div>
 </template>
